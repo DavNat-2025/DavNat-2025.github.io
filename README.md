@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Recetas, consejos y videos de cocina creativa. DavNat-2025 es tu sitio para aprender, experimentar y disfrutar la cocina.">
   <title>DavNat-2025 | Cocina Creativa</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #ff5e62;
       --secondary: #ff9966;
-      --bg: #fff5f0;
-      --text-dark: #333;
+      --bg: #fffaf5;
+      --text-dark: #2d2d2d;
       --text-light: #fff;
+      --card-bg: #ffffff;
     }
     * {
       box-sizing: border-box;
@@ -22,6 +24,7 @@
       color: var(--text-dark);
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
     header {
       background: linear-gradient(to right, var(--secondary), var(--primary));
@@ -42,6 +45,7 @@
     nav {
       background-color: var(--primary);
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
       padding: 15px;
@@ -65,7 +69,7 @@
       margin-bottom: 20px;
       color: var(--primary);
     }
-    .gallery, .recipes, .tips {
+    .gallery, .recipes, .tips, .tools {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -84,7 +88,7 @@
       transform: scale(1.05);
     }
     .recipe {
-      background: #fff;
+      background: var(--card-bg);
       padding: 20px;
       border-radius: 15px;
       width: 300px;
@@ -102,8 +106,9 @@
     }
     ul {
       text-align: left;
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto;
+      padding: 0 20px;
     }
     ul li {
       margin: 10px 0;
@@ -114,12 +119,40 @@
       margin-top: 30px;
       max-width: 100%;
     }
+    .tools div {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
     footer {
       background-color: var(--primary);
       color: var(--text-light);
       text-align: center;
       padding: 30px 20px;
       margin-top: 60px;
+    }
+    form {
+      margin-top: 30px;
+    }
+    input[type="email"] {
+      padding: 10px;
+      width: 250px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-right: 10px;
+    }
+    button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: var(--secondary);
     }
   </style>
 </head>
@@ -133,6 +166,8 @@
     <a href="#galeria">Galería</a>
     <a href="#recetas">Recetas</a>
     <a href="#consejos">Consejos</a>
+    <a href="#utensilios">Utensilios</a>
+    <a href="#planificacion">Planificación</a>
     <a href="#video">Video</a>
     <a href="#enlaces">Enlaces</a>
   </nav>
@@ -153,17 +188,17 @@
       <div class="recipe">
         <img src="https://images.unsplash.com/photo-1600628422012-72b1f0855f8c?auto=format&fit=crop&w=800&q=80" alt="Tostadas con aguacate">
         <h3>Tostadas con aguacate</h3>
-        <p>Pan tostado con aguacate, sal, limón, y un toque de chile. Perfecto para un desayuno nutritivo.</p>
+        <p>Pan tostado con aguacate, sal, limón y chile. Ideal para un desayuno saludable y rápido.</p>
       </div>
       <div class="recipe">
         <img src="https://images.unsplash.com/photo-1613145992275-b74dfd2dc961?auto=format&fit=crop&w=800&q=80" alt="Galletas de avena">
         <h3>Galletas de avena</h3>
-        <p>Saludables y fáciles, con avena, plátano y canela. Ideales como snack casero.</p>
+        <p>Avena, plátano y canela: una combinación perfecta para un snack energético.</p>
       </div>
       <div class="recipe">
         <img src="https://images.unsplash.com/photo-1600693251568-65f62dbb0316?auto=format&fit=crop&w=800&q=80" alt="Pasta al pesto">
         <h3>Pasta al pesto</h3>
-        <p>Spaghetti con pesto de albahaca y nuez, listo en menos de 20 minutos.</p>
+        <p>Una receta italiana clásica con albahaca fresca y nuez. Rápida y deliciosa.</p>
       </div>
     </div>
   </section>
@@ -171,11 +206,30 @@
   <section class="section" id="consejos">
     <h2>🧠 Consejos Culinarios</h2>
     <ul>
-      <li>Lee la receta completa antes de empezar.</li>
-      <li>Usa ingredientes frescos siempre que sea posible.</li>
-      <li>Prepara todos los ingredientes antes de cocinar.</li>
-      <li>No temas experimentar con sabores.</li>
-      <li>Mantén tu cocina ordenada durante el proceso.</li>
+      <li>Lee la receta completa antes de comenzar a cocinar.</li>
+      <li>Usa ingredientes de temporada para más sabor y economía.</li>
+      <li>Mise en place: ten todo preparado antes de encender el fuego.</li>
+      <li>Equilibra sabores: ácido, dulce, salado y umami.</li>
+      <li>Limpia mientras cocinas para evitar desorden.</li>
+    </ul>
+  </section>
+
+  <section class="section" id="utensilios">
+    <h2>🍴 Utensilios Básicos de Cocina</h2>
+    <div class="tools">
+      <div><strong>Cuchillo de chef</strong><br>Indispensable para cortar cualquier alimento con precisión.</div>
+      <div><strong>Tabla de cortar</strong><br>De madera o plástico, preferiblemente con base antideslizante.</div>
+      <div><strong>Sartén antiadherente</strong><br>Ideal para freír, saltear o hacer huevos sin que se pegue nada.</div>
+    </div>
+  </section>
+
+  <section class="section" id="planificacion">
+    <h2>🗓 Planificación Semanal</h2>
+    <p>Organiza tus comidas y compras con antelación para ahorrar tiempo y dinero.</p>
+    <ul>
+      <li>Haz una lista de recetas que deseas cocinar en la semana.</li>
+      <li>Compra los ingredientes un solo día para ahorrar tiempo.</li>
+      <li>Prepara comidas en lotes y congela porciones.</li>
     </ul>
   </section>
 
@@ -187,10 +241,18 @@
   <section class="section" id="enlaces">
     <h2>🔗 Enlaces Recomendados</h2>
     <ul>
-      <li><a href="https://www.recetasgratis.net" target="_blank">RecetasGratis.net</a>: miles de recetas caseras y saludables.</li>
-      <li><a href="https://www.directoalpaladar.com" target="_blank">Directo al Paladar</a>: blog gastronómico con recetas y técnicas.</li>
-      <li><a href="https://www.tastemade.com" target="_blank">Tastemade</a>: videos creativos de recetas internacionales.</li>
+      <li><a href="https://www.recetasgratis.net" target="_blank">RecetasGratis.net</a> – Miles de recetas caseras con instrucciones claras.</li>
+      <li><a href="https://www.directoalpaladar.com" target="_blank">Directo al Paladar</a> – Blog culinario con novedades y técnicas.</li>
+      <li><a href="https://www.tastemade.com" target="_blank">Tastemade</a> – Videos e ideas creativas de comida de todo el mundo.</li>
+      <li><a href="https://www.javirecetas.com" target="_blank">Javi Recetas</a> – Cocina española explicada paso a paso.</li>
+      <li><a href="https://www.seriouseats.com/" target="_blank">Serious Eats</a> – Análisis científicos sobre técnicas de cocina.</li>
     </ul>
+
+    <form>
+      <label for="email"><strong>Suscríbete al boletín de recetas:</strong></label><br>
+      <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+      <button type="submit">Suscribirme</button>
+    </form>
   </section>
 
   <footer>
@@ -198,3 +260,4 @@
   </footer>
 </body>
 </html>
+
